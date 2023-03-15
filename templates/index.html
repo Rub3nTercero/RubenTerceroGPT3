@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Rubén Tercero</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+  
+<body>
+    <div class="typing-demo">
+        Hola, me llamo Rubén Tercero es un placer conocerte.
+    </div>
+    <form action="/" method="post">
+        <input type="text" name="animal" placeholder="Pregúntame algo..." required/>
+        <input type="submit" value="Respuesta">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </input>
+    </form>
+    {% if result %}
+    <div class="result">{{ result }}</div>
+    {% endif %}
+
+    <canvas id="canvas"></canvas>
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js'></script>
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+</html>
